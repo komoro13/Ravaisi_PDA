@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProductsActivity">
+
+    <TextView
+        android:id="@+id/addProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:gravity="center_horizontal"
+        android:text="Προϊόντα"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/productTxBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addProducts"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:hint="Όνομα προϊόντος"
+        android:padding="20dp" />
+    <EditText
+        android:id="@+id/priceTxBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/productTxBox"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:hint="Τιμή"
+        android:padding="20dp" />
+    <EditText
+        android:id="@+id/categoryTxBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceTxBox"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/design_default_color_secondary_variant"
+        android:hint="Κατηγορία"
+        android:padding="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/categoryTxBox"
+        android:id="@+id/btnProdLt">
+        <com.google.android.material.button.MaterialButton
+        android:id="@+id/addProduct"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+        android:layout_below="@id/categoryTxBox"
+        android:text="Προσθήκη"
+        android:textColor="@color/white" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryTxBox"
+            android:layout_toRightOf="@id/toppingsChBox"
+            android:text="Διαγραφή"
+            android:id="@+id/deleteProductBtn"
+            android:textColor="@color/white"
+            android:layout_marginLeft="25dp"/></LinearLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/toppingsChBox"
+        android:layout_below="@id/btnProdLt"
+        android:layout_marginLeft="10dp"
+        android:text="Έξτρα υλικά" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/productsScroll"
+        android:layout_below="@id/toppingsChBox">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/existingProducts">
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

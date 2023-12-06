@@ -40,6 +40,7 @@ import java.util.regex.Pattern;
 
 public class AddCategoryActivity extends AppCompatActivity {
 
+    //Global variables
     String IP = "";
     String ADD_CATEGORY = "http://" + IP +"/ravaisi/AddCategory.php";
     String GET_CATEGORIES = "http://"+ IP +"/ravaisi/GetCategories.php";
@@ -64,17 +65,19 @@ public class AddCategoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         exCategories = new TextView[1000];
         super.onCreate(savedInstanceState);
         SharedPreferences netPreferences = getSharedPreferences("net", 0);
         IP = netPreferences.getString("IP", "");
-        if (IP.equals(""))
+        if (IP.equals(""))  //if ip is null string go to settings to set it
         {
             startActivity(new Intent(AddCategoryActivity.this, SettingsActivity.class));
         }
-        PATTERN = "[\\u0370-\\u03ff\\u1f00-\\u1fff\\ ]+";
+        PATTERN = "[\\u0370-\\u03ff\\u1f00-\\u1fff\\ ]+"; //category has to be greek letters
         setContentView(R.layout.activity_add_category);
-        selectedCategory = "";
+        selectedCategory = ""; //selected catefory is initially null
         deleteBtn = findViewById(R.id.deleteBtn);
 
         ADD_CATEGORY = "http://" + IP +"/ravaisi/AddCategory.php";

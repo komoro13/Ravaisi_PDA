@@ -52,15 +52,24 @@ import java.util.regex.Pattern;
 
 public class OrderActivity extends AppCompatActivity {
 
-    String IP = "";
+
+    //Global variables
+    String IP = ""; //ip of the user
+
+    //url to php files
     String GET_CATEGORIES = "http://"+ IP +"/ravaisi/GetCategories.php";
      String GET_PRODUCTS = "http://"+ IP +"/ravaisi/GetProducts.php";
 
      String GET_ORDER = "http://" + IP + "/ravaisi/GetOrder.php";
      String GET_ORDERS = "http://" + IP + "/ravaisi/GetOrders.php";
     String GET_TOPPINGS = "http://" + IP + "/ravaisi/GetProductToppings.php";
+
+
+
     ListView existingCategories;
+
     LinearLayout UI;
+
     ArrayAdapter arrayAdapter;
 
 
@@ -313,11 +322,17 @@ public class OrderActivity extends AppCompatActivity {
                                     {
                                         order.get(getOrderIndexByName(selectedProduct)).quantity = order.get(getOrderIndexByName(selectedProduct)).quantity - 1;
                                         Toast.makeText(OrderActivity.this, "Παρακαλω επιλεξτε υλικα!", Toast.LENGTH_SHORT).show();
-                                        if (order.get(getOrderIndexByName(selectedProduct)).quantity == 0)
-                                        {
+                                        if (order.get(getOrderIndexByName(selectedProduct)).quantity == 0) {
                                             deleteProductFromLayout(getProductIndexByName(selectedProduct));
                                             deleteProductFromOrder(getProductIndexByName(selectedProduct));
-                                            ((TextView)orderList.getChildAt(getProductIndexByName(selectedProduct))).setBackgroundColor(Color.WHITE);
+                                            ((TextView) orderList.getChildAt(getProductIndexByName(selectedProduct))).setBackgroundColor(Color.WHITE);
+                                        }
+                                        for (int j = 0; j < innerLayout1.getChildCount(); j++) {
+                                            CheckBox checkBox = (CheckBox) innerLayout1.getChildAt(j);
+                                            if (checkBox.isChecked()) {
+                                                checkBox.setChecked(false);
+                                            }
+
                                         }
                                         return;
                                     }
@@ -353,9 +368,21 @@ public class OrderActivity extends AppCompatActivity {
                                     {
                                         order.get(getOrderIndexByName(selectedProduct)).quantity = order.get(getOrderIndexByName(selectedProduct)).quantity + Integer.parseInt(quantityEditText.getText().toString()) - 1;
                                     }
+
                                     updateItems(selectedProduct);
+                                    for (int j = 0; j >= innerLayout1.getChildCount(); j++)
+                                    {
+                                        ((CheckBox)innerLayout1.getChildAt(j)).setChecked(false);
+                                    }
                                     editText.setText("");
                                     quantityEditText.setText("");
+                                    for (int j = 0; j < innerLayout1.getChildCount(); j++) {
+                                        CheckBox checkBox = (CheckBox) innerLayout1.getChildAt(j);
+                                        if (checkBox.isChecked()) {
+                                            checkBox.setChecked(false);
+                                        }
+
+                                    }
                                 }
                                 catch (Exception ex)
                                 {
@@ -662,7 +689,7 @@ public class OrderActivity extends AppCompatActivity {
                             public void onClick(View view) {
                                 try {
                                     if (order.get(getOrderIndexByName(selectedProduct)).items.size() != 0)
-                                    Log.d("PaymentActivity", order.get(getOrderIndexByName(selectedProduct)).getItemsString());
+                                        Log.d("PaymentActivity", order.get(getOrderIndexByName(selectedProduct)).getItemsString());
                                     for (int j = 0; j < innerLayout.getChildCount(); j++) {
                                         CheckBox checkBox;
                                         checkBox = (CheckBox) innerLayout.getChildAt(j);

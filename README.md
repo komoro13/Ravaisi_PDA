@@ -1,93 +1,54 @@
-# Restaurant PDA System - Android App
-This Android app is part of a restaurant's PDA (Personal Digital Assistant) system, developed in Java using Android Studio. The app allows restaurant staff to manage products, categories, and items, and send orders to the desktop application running in the kitchen. This ensures seamless communication between the waitstaff and the kitchen, improving order management and efficiency.
+#Restaurant PDA System - Android App
 
-## Features
+##Overview
 
-### Product Management:
-Add, update, and delete products, categories, and items in the system.
-Set product prices and customize items with possible toppings or variations.
-### Order Management:
-Take customer orders and send them directly to the kitchen desktop app.
-Modify existing orders in real-time.
-### Kitchen Communication:
-Orders are instantly sent to the kitchen desktop app, ensuring the kitchen is up-to-date with new and modified orders.
-### Simple Configuration:
-Configure the kitchen laptop's IP address to establish communication.
-Add products, prices, and toppings directly from the app interface.
+This Android app is a core component of a restaurant PDA (Personal Digital Assistant) system, designed to streamline restaurant operations. The app is developed in Java using Android Studio and is used by restaurant staff to manage and send orders to the kitchen.
 
-## Installation
+The app integrates with a desktop application (written in C# .NET) that runs in the kitchen to display and print orders. Orders and menu data are stored in a SQL database hosted on a XAMPP server, ensuring a centralized management system.
 
-**Clone the repository:**
+##Features
 
-git clone <repository-url>
-
-**Open in Android Studio:**
-
-**Launch Android Studio.**
-Select Open an existing project and navigate to the cloned repository folder.
-Sync the Gradle files when prompted.
-
-**Build the Project:**
-
-Connect your Android device via USB or set up an Android emulator.
-Click Run in Android Studio to build and install the app on your device.
+**Menu Management:** Add new products, categories, and items to the restaurant's menu, including pricing and optional toppings.
+**Order Management:** Send customer orders to the kitchen desktop application.
+**Configuration:** Configure the kitchen's desktop IP address for communication.
+**SQL Database Integration:** Orders and menu data are sent and retrieved from a SQL database hosted on a XAMPP server.
+**Real-Time Communication:** Ensures that orders are sent in real time to the kitchen for preparation.
 
 ## Requirements
 
-**Android Version:** Android 6.0 (API level 23) or higher.
-**Network Access:** Ensure the Android device and the kitchen desktop are on the same local network.
+**Android Device:** Running Android 5.0 (Lollipop) or higher.
+**Development Environment:** Android Studio.
+**Database:** XAMPP server hosting the SQL database.
+**Network:** Ensure that both the Android device and the kitchen laptop are connected to the same network for proper communication.
 
-## Key Features and Modules
+## Installation and Setup
 
-**1. Product Management**
-**Categories:** Add, update, or remove categories (e.g., Drinks, Appetizers, Main Courses).
-**Products:** Manage products under each category with their respective prices and descriptions.
-**Toppings/Variations:** Add possible toppings or variations (e.g., extra cheese, different sauces) to individual products.
+### Set up XAMPP Server
 
-**2. Order Management**
-**Order Taking:** Staff can take customer orders, select products, add any required toppings, and send the order to the kitchen.
-**Modify Orders:** Orders can be modified in real-time, and the kitchen will be notified of the changes immediately.
+1. Install XAMPP on the designated server (typically the kitchen laptop).
+2. Create a MySQL database that will store the menu and orders.
+3. Import the required database structure from the provided .sql file.
+4. Configure the Kitchen Desktop IP:
 
-**3. Kitchen Communication**
+### Add Menu Items:
 
-Orders placed through the app are sent directly to the desktop app in the kitchen via the configured IP address.
-The kitchen receives a clear and organized breakdown of each order, including any modifications or special requests.
+1. Open the Menu Management section.
+2. Add categories, products, prices, and optional toppings.
 
-## Configuration
+The data is automatically saved to the SQL database on the XAMPP server.
 
-**1. Set the Kitchen Desktop IP Address**
-Go to the Settings>Network Settings section of the app.
-Enter the IP address of the kitchen desktop where the PDA system's kitchen app is running.
-**Example:** 192.168.1.10
+### Sending Orders:
 
-**2. Add Products to the Menu**
-Open the Product Management section.
-Create a new Category (e.g., Beverages, Starters).
-Add Products under each category with their name, price, and possible toppings if needed.
-**Example:**
-Category: Wraps
-Product: Pita
-Price: $3.50
-Toppings: potatoes, tzatziki, tomato, onions
+Select items from the menu and send the order.
+The order is stored in the SQL database and displayed on the kitchen desktop app.
 
-## Usage
+### SQL Database Integration
 
-### Add New Products:
+The app uses the SQL database hosted on the XAMPP server to store and manage menu items and orders.
+The database ensures synchronization between the Android app and the desktop application.
 
-Go to the Settings > Products and Categories section.
-Add new products or categories as needed.
-Update prices, descriptions, and possible toppings for each product.
+### Configuration
 
-### Take Orders:
-
-Select a table, choose the products from the menu, and send the order directly to the kitchen.
-The app will notify the kitchen desktop app in real-time.
-
-## Troubleshooting
-
-**App Not Communicating with Kitchen:**
-Ensure that both the Android device and the kitchen desktop are connected to the same network.
-Verify that the correct IP address of the kitchen desktop has been entered in the app's settings.
-**Products Not Updating:**
-Check the network connection to ensure the app can sync with the PDA system's backend.
-Make sure that the product details are correctly filled in, including price and categories.
+Set the kitchen desktop's IP address within the app.
+Ensure proper network connectivity to facilitate communication between the Android app and the SQL database via XAMPP.
+This README provides detailed instructions on how to set up and use the Android app for the restaurant PDA system.

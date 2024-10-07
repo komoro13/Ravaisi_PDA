@@ -1,12 +1,12 @@
-#Restaurant PDA System - Android App
+# Restaurant PDA System - Android App
 
-##Overview
+## Overview
 
 This Android app is a core component of a restaurant PDA (Personal Digital Assistant) system, designed to streamline restaurant operations. The app is developed in Java using Android Studio and is used by restaurant staff to manage and send orders to the kitchen.
 
 The app integrates with a desktop application (written in C# .NET) that runs in the kitchen to display and print orders. Orders and menu data are stored in a SQL database hosted on a XAMPP server, ensuring a centralized management system.
 
-##Features
+## Features
 
 **Menu Management:** Add new products, categories, and items to the restaurant's menu, including pricing and optional toppings.
 **Order Management:** Send customer orders to the kitchen desktop application.

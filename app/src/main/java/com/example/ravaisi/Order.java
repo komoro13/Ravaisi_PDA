@@ -6,6 +6,9 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
@@ -74,6 +77,40 @@ public class Order {
             return order;
         }
 
+    JSONObject createOrderJSON() throws JSONException {
+        //This function parses the order from Order object to JSON
+        //JSON format scheme
+        //
+        // [table][price][[products]
+        //                 \
+        //                  \
+        //                   [name][items]
+        //                          \
+        //                           \
+        //                            [toppings][quantity][comments][price]
+        //
+        //
+        JSONObject orderJSON = new JSONObject();
+        orderJSON.put("table", this.table);
+        orderJSON.put("price",this.price);
+        for (Product product:products)
+        {
+            JSONObject productJSON = new JSONObject();
+            productJSON.put("name",product.name);
+            for (Item item:product.items)
+            {
+                 JSONObject itemsJSON = new JSONObject();
+                 itemsJSON.put("toppings",item.toppings);
+                 itemsJSON.put("quantity", item.quantity);
+                 itemsJSON.put("comments", item.comments);
+                 itemsJSON.put("price", item.calculatePrice());
+                 productJSON.put("item" + String.valueOf(product.items.indexOf(item)), itemsJSON);
+            }
+            orderJSON.put("product" + String.valueOf(products.indexOf(product)),productJSON);
+        }
+        return orderJSON;
+    }
+
 
 
 
@@ -85,6 +122,8 @@ public class Order {
         sendOrder = new addOrder(this.table);
         sendOrder.execute();
     }
+
+
     private class addOrder extends AsyncTask
     {
         String order_table;

@@ -164,13 +164,13 @@ This custom protocol is crucial for ensuring that orders are formatted correctly
 Here are some screenshots of the RavaisiPDA Android application:
 
 * **Add Product**:
-  ![Add Product](path/to/add_product_screenshot.jpg)  <!-- Replace with actual path -->
+  ![Add Product](rsc/add_product.png)  
 
 * **New Order**:
-  ![New Order](path/to/new_order_screenshot.jpg)  <!-- Replace with actual path -->
+  ![New Order](rsc/new_order.png) 
 
 * **Main Menu**:
-  ![Main Menu](path/to/main_menu_screenshot.jpg)  <!-- Replace with actual path -->
+  ![Main Menu](rsc/main_menu.png) 
 
   ## Usage
 

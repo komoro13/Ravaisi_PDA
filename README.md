@@ -164,13 +164,13 @@ This custom protocol is crucial for ensuring that orders are formatted correctly
 Here are some screenshots of the RavaisiPDA Android application:
 
 * **Add Product**:
-<img src="rsc/add_product.png" height="300px">
+<img src="rsc/add_product.png" height="700px">
 
 * **New Order**:
-<img src="rsc/new_order.png" height="300px">
+<img src="rsc/new_order.png" height="700px">
 
 * **Main Menu**:
-<img src="rsc/main_menu.png" height="300px">
+<img src="rsc/main_menu.png" height="700px">
 
   ## Usage
 

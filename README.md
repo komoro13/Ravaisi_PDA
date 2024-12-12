@@ -163,34 +163,8 @@ This custom protocol is crucial for ensuring that orders are formatted correctly
 
 Here are some screenshots of the RavaisiPDA Android application:
 
-<style>
-        .container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 20px;
-        }
-        .image-container {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <div class="image-container">
-            <h3>Add Product</h3>
-            <img src="rsc/add_product.png" height="300px" alt="Add Product">
-        </div>
-        <div class="image-container">
-            <h3>New Order</h3>
-            <img src="rsc/new_order.png" height="300px" alt="New Order">
-        </div>
-        <div class="image-container">
-            <h3>Main Menu</h3>
-            <img src="rsc/main_menu.png" height="300px" alt="Main Menu">
-        </div>
-    </div>
+  <img src="rsc/add_product.png" height="300px" alt="Add Product"> <img src="rsc/new_order.png" height="300px" alt="New Order"> <img src="rsc/main_menu.png" height="300px" alt="Main Menu">
+      
   ## Usage
 
 1. **Add Categories, Products, and Toppings**: 

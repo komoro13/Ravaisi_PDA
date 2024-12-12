@@ -164,7 +164,7 @@ This custom protocol is crucial for ensuring that orders are formatted correctly
 Here are some screenshots of the RavaisiPDA Android application:
 
 * **Add Product**:
-  ![Add Product](rsc/add_product.png)  
+<img src="rsc/add_product.png" height="100px">
 
 * **New Order**:
   ![New Order](rsc/new_order.png) 

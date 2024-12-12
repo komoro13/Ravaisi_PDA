@@ -15,7 +15,7 @@ RavaisiPDA consists of an Android application that allows waiters to send orders
 
 * **Android Application**: 
   * Waiters can create and send orders directly.
-  * Four main sections: New Order, Orders, Settings.
+  * Three main sections: New Order, Orders, Settings.
 
 ## Android Application Details
 
@@ -164,13 +164,13 @@ This custom protocol is crucial for ensuring that orders are formatted correctly
 Here are some screenshots of the RavaisiPDA Android application:
 
 * **Add Product**:
-<img src="rsc/add_product.png" height="700px">
+<img src="rsc/add_product.png" height="300px">
 
 * **New Order**:
-<img src="rsc/new_order.png" height="700px">
+<img src="rsc/new_order.png" height="300px">
 
 * **Main Menu**:
-<img src="rsc/main_menu.png" height="700px">
+<img src="rsc/main_menu.png" height="300px">
 
   ## Usage
 

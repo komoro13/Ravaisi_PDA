@@ -259,6 +259,8 @@ public class AddProductsActivity extends AppCompatActivity {
     }
 
         private class addProduct extends AsyncTask {
+        //This function adds a new product to the database. It encodes the product and sends it
+        //to the AddProducts php file located in the main PC
             @Override
             protected Object doInBackground(Object[] objects) {
                 String data = URLEncoder.encode("name") + "=" + URLEncoder.encode(product)
@@ -337,9 +339,8 @@ public class AddProductsActivity extends AppCompatActivity {
                     rows = response.split("_");
                     products = response.split("_");
                     productCategories = response.split(("_"));
-                    if (response.equals(""))
-                        return null;
-                        for (int j = 0; j < products.length; j++) {
+                    if (response.equals("")) return null;
+                    for (int j = 0; j < products.length; j++) {
                             products[j] = products[j].split("/")[0];
                             productCategories[j] = productCategories[j].split("/")[2];
                         }

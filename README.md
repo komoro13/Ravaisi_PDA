@@ -16,7 +16,7 @@ The application communicates with a PHP/MySQL backend, while submitted orders ca
 <p align="center">
   <img src="rsc/main_menu.png" width="260" alt="Ravaisi main menu">
   <img src="rsc/new_order.png" width="260" alt="Ravaisi new order screen">
-  <img src="rsc/products.png" width="260" alt="Ravaisi product management screen">
+  <img src="rsc/products_and_settings.png" width="260" alt="Ravaisi product management screen">
 </p>
 
 <p align="center">
